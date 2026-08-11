@@ -1,13 +1,20 @@
-# Stripe Dashboard
+# OrgSuite Stripe Dashboard
 
-Professional Stripe Dashboard for **Point Goddess CC / PSE Management**.
+Professional Stripe payments dashboard for **Point Goddess CC / PSE Management**.
 
-## Purpose
+Built with Next.js + TypeScript. Ready for local development and Vercel deployment.
 
-- Payments overview
-- Customers & invoices
-- Test-mode ready
-- Built for Vercel deployment
+---
+
+## Features included
+
+- Clean dark professional UI
+- Dashboard status (Live / Demo mode)
+- Placeholder cards for Balance, Customers, Invoices
+- Secure Stripe client helper
+- Environment-based configuration only
+
+---
 
 ## Clone into Working Copy
 
@@ -15,17 +22,76 @@ Professional Stripe Dashboard for **Point Goddess CC / PSE Management**.
 https://github.com/pointgoddesscc-sketch/stripe-dashboard.git
 ```
 
-## Stack (recommended)
+---
 
-- Next.js or plain HTML/JS
-- Stripe API (test keys only in development)
-- Vercel for hosting
+## Quick start (local)
 
-## Security
+1. Clone the repository
+2. Copy environment template:
+   ```bash
+   cp .env.example .env.local
+   ```
+3. Add **test** Stripe keys only:
+   - `STRIPE_SECRET_KEY=sk_test_...`
+   - `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...`
+4. Install and run:
+   ```bash
+   npm install
+   npm run dev
+   ```
+5. Open http://localhost:3000
 
-- Never commit real Stripe secret keys
-- Use environment variables / Vercel secrets
-- Keep test mode for development
+---
+
+## Project structure
+
+```
+stripe-dashboard/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── globals.css
+│   └── lib/
+│       └── stripe.ts
+├── .env.example
+├── .gitignore
+├── next.config.js
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+---
+
+## Security rules
+
+- Use **test keys only** while developing
+- Never commit real secret keys or a real `.env.local`
+- On Vercel, store keys as Environment Variables / Secrets
+- Prefer restricted API keys when moving to production
+
+---
+
+## Deploy to Vercel
+
+1. Import this repository in Vercel
+2. Add the Stripe environment variables in the Vercel project settings
+3. Deploy
+
+---
+
+## Next extensions (optional)
+
+- Fetch real balance, customers, and invoices with the Stripe API
+- Add pagination and search
+- Webhook endpoint for payment events
+- Role-based access if needed later
+
+---
 
 **Account:** pointgoddesscc@gmail.com  
-**GitHub:** pointgoddesscc-sketch
+**GitHub:** pointgoddesscc-sketch  
+**Stack:** Next.js 14 · TypeScript · Stripe
+
+This dashboard is production-ready as a professional starter.
